@@ -1,5 +1,11 @@
-const a = new URLSearchParams();
+const url = new URLSearchParams(window.location.search);
 
-a.size;
+if (url.size) {
+  console.log("어쩌구 로직 실행");
+}
 
-const s = new webkitURL();
+// 아래로 대체
+const hasParams = !![...url.values()].length;
+if (hasParams) {
+  console.log("어쩌구 로직 실행");
+}
